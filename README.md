@@ -1,39 +1,59 @@
-# Project Name
+# Civil Procedure Course Materials
 
-Brief description.
+Machine-readable course materials for AI workflows. Original files go in; clean UTF-8 Markdown comes out.
 
-## Tech Stack
+## Repository Structure
 
-- [pnpm](https://pnpm.io/) — Fast, disk space efficient package manager
-- [Next.js](https://nextjs.org/) — React framework
-- [Tailwind CSS](https://tailwindcss.com/) — Utility-first CSS framework
-- [shadcn/ui](https://ui.shadcn.com/) — Beautifully designed components
-
-## Getting Started
-
-```bash
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
+```
+civil-procedure-materials/
+├── casebook/
+│   ├── original/          ← Drop raw files here
+│   └── cleaned/           ← Cleaned markdown output
+├── lectures/
+│   ├── original/
+│   └── cleaned/
+├── exams/
+│   ├── original/
+│   └── cleaned/
+├── assignments/
+│   ├── original/
+│   └── cleaned/
+├── study-aids/
+│   ├── original/
+│   └── cleaned/
+├── outline/
+│   ├── original/
+│   └── cleaned/
+├── restricted/            ← Student work, grades, feedback (FERPA-protected)
+│   ├── original/
+│   └── cleaned/
+├── scripts/               ← Conversion and automation scripts
+├── _context/              ← TA guides, reference material, dev docs
+├── inventory.csv          ← Master tracking file
+└── .claude/commands/      ← Claude skills for cleaning files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
+## For TAs
 
-## Adding Components
+See [_context/ta-workflow.md](_context/ta-workflow.md) for the full guide.
 
-This template uses shadcn/ui. To add new components:
+### Quick start
 
-```bash
-cd apps/interface
-npx shadcn@latest add button card dialog
-```
+1. Drop your original file in `{category}/original/` (e.g., `exams/original/2024-final.pdf`)
+2. Run the matching Claude skill to clean it:
+   - `/clean-pdf` — text-selectable PDFs
+   - `/clean-scan` — scanned PDFs or images
+   - `/clean-docx` — Word documents
+   - `/clean-slides` — PowerPoint or PDF slide decks
+   - `/clean-transcript` — raw transcripts
+3. Cleaned output lands in `{category}/cleaned/`
+4. Run `/qa-check` to verify the result
+5. Update `inventory.csv`
 
-See the [shadcn/ui docs](https://ui.shadcn.com/docs/components) for available components.
+### Naming
 
-## Structure
+Lowercase, hyphens, no spaces: `2024-final.pdf`, `ch01-personal-jurisdiction.pdf`, `lecture-07.mp4`
 
-- `_content/` — Markdown documentation (each folder = route)
-- `apps/interface` — Next.js web application
-- `packages/` — Shared packages
+### Privacy
+
+**Do not upload student work, grades, or student-identifiable material to external AI tools.** FERPA applies. Student data goes in `restricted/` only.
