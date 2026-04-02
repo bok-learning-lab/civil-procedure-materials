@@ -12,7 +12,6 @@ assignments/
 study-aids/
 outline/
 restricted/         # Student work, grades, feedback — NEVER upload to external AI tools
-scripts/            # Conversion and automation scripts
 _context/           # TA guides, reference material, dev docs
 inventory.csv       # Master tracking file (one row per item)
 .claude/commands/   # Claude skills for file cleaning

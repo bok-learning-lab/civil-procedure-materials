@@ -27,7 +27,6 @@ civil-procedure-materials/
 ├── restricted/            ← Student work, grades, feedback (FERPA-protected)
 │   ├── original/
 │   └── cleaned/
-├── scripts/               ← Conversion and automation scripts
 ├── _context/              ← TA guides, reference material, dev docs
 ├── inventory.csv          ← Master tracking file
 └── .claude/commands/      ← Claude skills for cleaning files
@@ -35,7 +34,9 @@ civil-procedure-materials/
 
 ## For TAs
 
-See [_context/ta-workflow.md](_context/ta-workflow.md) for the full guide.
+**First time?** Start with [_context/setup.md](_context/setup.md) — it walks you from zero to your first cleaned file.
+
+**Already set up?** See [_context/ta-workflow.md](_context/ta-workflow.md) for the day-to-day workflow.
 
 ### Quick start
 
