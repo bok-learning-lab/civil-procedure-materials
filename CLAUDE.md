@@ -11,7 +11,6 @@ exams/
 assignments/
 study-aids/
 outline/
-restricted/         # Student work, grades, feedback — NEVER upload to external AI tools
 _context/           # TA guides, reference material, dev docs
 inventory.csv       # Master tracking file (one row per item)
 .claude/commands/   # Claude skills for file cleaning
@@ -38,7 +37,6 @@ Every material category has two subfolders:
 ### Privacy (FERPA)
 
 - Never upload student work, grades, or student-identifiable data to external AI tools
-- Student materials belong in `restricted/` only
 - Check extracted text for metadata leaks (author names, tracked changes, EXIF data)
 
 ### Available Claude Skills

@@ -24,9 +24,6 @@ civil-procedure-materials/
 ├── outline/
 │   ├── original/
 │   └── cleaned/
-├── restricted/            ← Student work, grades, feedback (FERPA-protected)
-│   ├── original/
-│   └── cleaned/
 ├── _context/              ← TA guides, reference material, dev docs
 ├── inventory.csv          ← Master tracking file
 └── .claude/commands/      ← Claude skills for cleaning files
