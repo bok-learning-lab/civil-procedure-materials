@@ -2,11 +2,38 @@
 
 This walks you through everything you need to get from zero to your first cleaned markdown file.
 
-## What you'll need
+## Before the session (do this ahead of time)
+
+- [ ] **Create a GitHub account** (free) at [https://github.com](https://github.com) — if you already have one, skip this
+- [ ] **Send your GitHub username** to your supervisor so they can add you as a collaborator on the repo. You won't be able to push your work without this.
+- [ ] **Bring a PDF** of a civil procedure document — a casebook chapter, old exam, study aid, anything. This is your practice file.
+
+## What you'll need at the session
 
 - A laptop (Mac or Windows)
-- A PDF of a civil procedure document (bring one — a casebook chapter, old exam, study aid, anything)
+- Your GitHub account credentials
+- Your practice PDF
 - About an hour
+
+## Step 0: Install developer tools and git (5 min)
+
+Open **Terminal** (on Mac: search "Terminal" in Spotlight, or find it in Applications → Utilities).
+
+```bash
+# Install Xcode Command Line Tools (this gives you git)
+xcode-select --install
+```
+
+A popup will appear — click **Install** and wait for it to finish.
+
+Then configure git with your name and email:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@harvard.edu"
+```
+
+> **Windows users:** Install [Git for Windows](https://git-scm.com/download/win) instead. Follow the installer defaults.
 
 ## Step 1: Install VS Code (5 min)
 
@@ -170,3 +197,31 @@ Once you've done one file end to end, you know the process. From here:
 - When you have a batch of the same type, ask Claude to use a batch agent instead
 - See `_context/ta-workflow.md` for the full workflow reference
 - See `_context/skills-vs-agents.md` for when to use skills vs. agents
+
+---
+
+## Optional: Advanced toolkit for batch processing
+
+You don't need any of this for day one — Claude Code handles everything inside VS Code. But if you later want to run conversion scripts directly or process files outside of Claude, here's the full toolkit:
+
+```bash
+# Install Homebrew (Mac package manager) — skip if you already have it
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Document conversion and media tools
+brew install pandoc ffmpeg
+
+# Python libraries for batch processing
+pip3 install pymupdf pdfminer.six ocrmypdf python-pptx openai-whisper anthropic openpyxl
+```
+
+| Tool | What it's for |
+|---|---|
+| `pandoc` | Word/HTML → Markdown (does NOT read PDFs) |
+| `ffmpeg` | Splitting/converting video and audio files |
+| `pymupdf` / `pdfminer` | PDF text extraction |
+| `ocrmypdf` | OCR for scanned PDFs |
+| `python-pptx` | PowerPoint text and speaker notes extraction |
+| `openai-whisper` | Audio/video transcription (runs locally) |
+| `anthropic` | Claude API calls from scripts |
+| `openpyxl` | Excel/spreadsheet processing |
